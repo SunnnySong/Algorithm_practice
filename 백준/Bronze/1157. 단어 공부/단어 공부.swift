@@ -1,24 +1,16 @@
-func solution1152() {
+func solution1157() {
     
-    let input = Array(readLine()!)
+    let input = readLine()!.uppercased()
     
-    var dictionay: [String: Int] = [:]
+    var dictionay: [Character: Int] = [:]
     input.forEach { value in
-        let uppercasedString = value.uppercased()
-        dictionay[String(uppercasedString), default: 0] += 1
+        dictionay[value, default: 0] += 1
     }
     
-    var maxCount = 0
-    var maxString = ""
-    for (key, value) in dictionay {
-        if maxCount < value {
-            maxString = key
-            maxCount = value
-        } else if maxCount == value {
-            maxString += key
-        }
-    }
-    print(maxString.count > 1 ? "?" : "\(maxString)")
+    let maxCount = dictionay.values.max()!
+    let maxCharacter = dictionay.filter { $0.value == maxCount }.keys
+   
+    print(maxCharacter.count > 1 ? "?" : "\(maxCharacter.first!)")
 }
 
-solution1152()
+solution1157()

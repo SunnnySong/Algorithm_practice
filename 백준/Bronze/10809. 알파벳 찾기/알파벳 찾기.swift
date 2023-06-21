@@ -1,3 +1,4 @@
+// 1번 방법
 func solution2941() {
     
     let alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -16,3 +17,14 @@ func solution2941() {
 }
 
 solution2941()
+
+// 2번 방법
+func solution2941() {
+    
+    let alphabet = "abcdefghijklmnopqrstuvwxyz"
+    let input = Array(readLine()!)
+    
+    var replaceIndex = alphabet.map { input.firstIndex(of: $0) ?? -1 }
+    let result = replaceIndex.map { String($0) }.joined(separator: " ")
+    print(result)
+}

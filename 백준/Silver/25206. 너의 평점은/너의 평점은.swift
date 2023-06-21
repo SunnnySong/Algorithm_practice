@@ -1,5 +1,3 @@
-import Foundation
-
 enum Grade: String {
     case plusA = "A+"
     case zeroA = "A0"
@@ -41,9 +39,9 @@ func solution2941() {
     var totalScore: Double = 0
     
     for _ in 0..<20 {
-        let input = readLine()!.components(separatedBy: " ")
+        let input = readLine()!.split(separator: " ")
         let score = Double(input[1])!
-        guard let grade = Grade(rawValue: input[2]) else {
+        guard let grade = Grade(rawValue: String(input[2])) else {
             continue
         }
         

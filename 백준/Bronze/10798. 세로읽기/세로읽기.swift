@@ -1,26 +1,17 @@
 func solution() {
     
-    var matrix = [[Character?]]()
-    var maxCount = 0
+    var matrix = Array(repeating: Array<String?>(repeating: nil, count: 15), count: 5)
     
-    for _ in 0..<5 {
+    for i in 0..<5 {
         let input = Array(readLine()!)
-        matrix.append(input)
-        
-        if maxCount < input.count {
-            maxCount = input.count
+        for (index, value) in input.enumerated() {
+            matrix[i][index] = String(value)
         }
     }
-    
     var result = ""
-    
-    for h in 0..<maxCount {
+
+    for h in 0..<15 {
         for i in 0..<5 {
-            if matrix[i].count < maxCount {
-                for _ in matrix[i].count..<maxCount {
-                    matrix[i].append(nil)
-                }
-            }
             guard let string = matrix[i][h] else {
                 result += ""
                 continue

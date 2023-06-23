@@ -1,13 +1,11 @@
-import Foundation
-
 func solution() {
-    let count = readLine()!.components(separatedBy: " ").map { Int($0)! }
+    let count = readLine()!.split(separator: " ").map { Int($0)! }
     let n = count[0], m = count[1]
     
     var a = [[Int]]()
     
     for _ in 0..<n*2 {
-        let input = readLine()!.components(separatedBy: " ").map { Int($0)! }
+        let input = readLine()!.split(separator: " ").map { Int($0)! }
         a.append(input)
     }
     

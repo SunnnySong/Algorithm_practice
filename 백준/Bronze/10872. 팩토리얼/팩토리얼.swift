@@ -1,15 +1,11 @@
 func solution() {
     let input = Int(readLine()!)!
-    var array = [Int]()
+    print(factorial(input))
+}
 
-    if input == 0 {
-        print("1")
-    } else {
-        for i in 1...input {
-            array.append(i)
-        }
-        print(array.reduce(1, *))
-    }
+func factorial(_ num: Int) -> Int {
+    if num == 0 { return 1 }
+    return num * factorial(num - 1)
 }
 
 solution()
